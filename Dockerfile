@@ -25,9 +25,11 @@ RUN apt-get clean
 RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* ~/.cache
 
 # Default configuration.
-COPY mopidy.conf /config/mopidy.conf
+COPY mopidy.conf /var/lib/mopidy/.config/mopidy/mopidy.conf
 
-VOLUME ["/data", "/config"]
+ENV HOME=/var/lib/mopidy
+
+VOLUME ["/var/lib/mopidy"]
 
 EXPOSE 6600 6680
 
