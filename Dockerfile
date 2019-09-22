@@ -13,8 +13,6 @@ RUN apt-get update \
         mopidy-soundcloud \
         mopidy-spotify \
         mopidy-tunein
-RUN mkdir -p /var/lib/mopidy/.config
-RUN ln -s /config /var/lib/mopidy/.config/mopidy
 
 # Clean-up
 RUN apt-get purge --auto-remove -y \
@@ -25,18 +23,8 @@ RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* ~/.cache
 # Default configuration.
 COPY mopidy.conf /config/mopidy.conf
 
-# Allows any user to run mopidy, but runs by default as a randomly generated UID/GID.
-ENV HOME=/var/lib/mopidy
-RUN set -ex \
-    && usermod -G audio,sudo mopidy \
-    && chown mopidy:audio -R $HOME \
-    && chmod go+rw -R $HOME
+VOLUME ["/data", "/config"]
 
-# Runs as mopidy user by default.
-USER mopidy
-
-VOLUME ["/var/lib/mopidy/local", "/var/lib/mopidy/media", "/var/lib/mopidy/m3u"]
-
-EXPOSE 6600 6680 5555/udp
+EXPOSE 6600 6680
 
 CMD ["/usr/bin/mopidy"]
