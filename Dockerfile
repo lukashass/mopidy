@@ -20,6 +20,7 @@ RUN curl -L https://bootstrap.pypa.io/get-pip.py | python - \
     && pip install \
         https://github.com/natumbri/mopidy-youtube/archive/6deb7584434a676adce7b3365c61a90f17de9017.zip \
         pyopenssl \
+        requests-cache \
         Mopidy-Iris \
         Mopidy-Local-Images
 
