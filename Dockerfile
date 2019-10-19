@@ -21,7 +21,7 @@ RUN curl -L https://bootstrap.pypa.io/get-pip.py | python - \
         https://github.com/natumbri/mopidy-youtube/archive/6deb7584434a676adce7b3365c61a90f17de9017.zip \
         pyopenssl \
         requests-cache \
-        Mopidy-Iris \
+        https://github.com/lukashass/Iris/archive/master.zip \
         Mopidy-Local-Images
 
 # Clean-up
