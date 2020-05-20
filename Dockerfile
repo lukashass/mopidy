@@ -30,8 +30,6 @@ COPY mopidy.conf /var/lib/mopidy/.config/mopidy/mopidy.conf
 
 ENV HOME=/var/lib/mopidy
 
-VOLUME ["/var/lib/mopidy"]
-
 EXPOSE 6600 6680
 
 CMD ["/usr/bin/mopidy"]
