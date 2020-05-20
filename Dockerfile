@@ -17,6 +17,7 @@ RUN python3 -m pip install \
         Mopidy-Iris \
         Mopidy-Local \
         Mopidy-MPD \
+        Mopidy-SomaFM \
         Mopidy-SoundCloud \
         Mopidy-TuneIn \
         Mopidy-YouTube
