@@ -5,7 +5,9 @@ RUN apt-get update \
         curl \
         gnupg \
         python3-pip \
-        gstreamer1.0-plugins-bad
+        gstreamer1.0-libav \
+        gstreamer1.0-plugins-bad \
+        gstreamer1.0-plugins-ugly
 RUN curl -L https://apt.mopidy.com/mopidy.gpg | apt-key add -
 RUN curl -L https://apt.mopidy.com/buster.list -o /etc/apt/sources.list.d/mopidy.list
 RUN apt-get update \
