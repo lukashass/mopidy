@@ -4,25 +4,20 @@ RUN apt-get update \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y \
         curl \
         gnupg \
-        python-crypto \
+        python3-pip \
         gstreamer1.0-plugins-bad
 RUN curl -L https://apt.mopidy.com/mopidy.gpg | apt-key add -
-RUN curl -L https://apt.mopidy.com/mopidy.list -o /etc/apt/sources.list.d/mopidy.list
+RUN curl -L https://apt.mopidy.com/buster.list -o /etc/apt/sources.list.d/mopidy.list
 RUN apt-get update \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y \
-        mopidy \
-        mopidy-local-sqlite \
-        mopidy-soundcloud \
-        mopidy-spotify \
-        mopidy-tunein
-RUN curl -L https://bootstrap.pypa.io/get-pip.py | python - \
-    && pip install --upgrade six pyasn1 requests[security] cryptography \
-    && pip install \
-        https://github.com/natumbri/mopidy-youtube/archive/6deb7584434a676adce7b3365c61a90f17de9017.zip \
-        pyopenssl \
-        requests-cache \
-        https://github.com/lukashass/Iris/archive/fix/3.40.0-crossorigin.zip \
-        Mopidy-Local-Images
+        mopidy
+RUN python3 -m pip install \
+        Mopidy-Iris \
+        Mopidy-Local \
+        Mopidy-MPD \
+        Mopidy-SoundCloud \
+        Mopidy-TuneIn \
+        Mopidy-YouTube
 
 # Clean-up
 RUN apt-get purge --auto-remove -y \
