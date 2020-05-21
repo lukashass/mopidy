@@ -12,7 +12,8 @@ RUN curl -L https://apt.mopidy.com/mopidy.gpg | apt-key add -
 RUN curl -L https://apt.mopidy.com/buster.list -o /etc/apt/sources.list.d/mopidy.list
 RUN apt-get update \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y \
-        mopidy
+        mopidy \
+        mopidy-spotify
 RUN python3 -m pip install \
         Mopidy-Iris \
         Mopidy-Local \
