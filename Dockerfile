@@ -21,7 +21,7 @@ RUN python3 -m pip install \
         Mopidy-SomaFM \
         Mopidy-SoundCloud \
         Mopidy-TuneIn \
-        https://github.com/natumbri/mopidy-youtube/archive/fcce9411fcbafd279b0152035486a60abad4f561.zip
+        Mopidy-YouTube==3.1
 
 # Clean-up
 RUN apt-get purge --auto-remove -y \
