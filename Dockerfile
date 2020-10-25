@@ -15,7 +15,7 @@ RUN apt-get update \
         mopidy \
         mopidy-spotify
 RUN python3 -m pip install \
-        Mopidy-Iris==3.52.1 \
+        Mopidy-Iris==3.52.4 \
         Mopidy-Local \
         Mopidy-MPD \
         Mopidy-SomaFM \
