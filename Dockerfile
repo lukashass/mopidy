@@ -15,13 +15,13 @@ RUN apt-get update \
         mopidy \
         mopidy-spotify
 RUN python3 -m pip install \
-        Mopidy-Iris==3.52.4 \
+        Mopidy-Iris==3.57.2 \
         Mopidy-Local \
         Mopidy-MPD \
         Mopidy-SomaFM \
         Mopidy-SoundCloud \
         Mopidy-TuneIn \
-        Mopidy-YouTube==3.1
+        Mopidy-YouTube==3.2
 
 # Clean-up
 RUN apt-get purge --auto-remove -y \
