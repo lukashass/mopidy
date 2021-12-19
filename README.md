@@ -1,12 +1,10 @@
 # Mopidy Docker Image
 
-![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/lukashass/mopidy)
-![Docker Pulls](https://img.shields.io/docker/pulls/lukashass/mopidy)
-![Docker Image Size (tag)](https://img.shields.io/docker/image-size/lukashass/mopidy/latest)
+[![Build Image](https://github.com/lukashass/snapcast/actions/workflows/build.yml/badge.svg)](https://github.com/lukashass/snapcast/actions/workflows/build.yml)
 
 ## Installed extensions
 
-Have a look inside [Dockerfile](Dockerfile).
+Have a look inside [Containerfile](Containerfile).
 
 ## Deployment example
 
@@ -15,7 +13,7 @@ version: '3'
 
 services:
   mopidy:
-    image: lukashass/mopidy:3
+    image: ghcr.io/lukashass/mopidy
     restart: always
     ports:
       - 6600:6600

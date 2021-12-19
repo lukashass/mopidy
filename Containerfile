@@ -1,4 +1,4 @@
-FROM debian:buster-slim
+FROM debian:bullseye-slim
 
 RUN apt-get update \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y \
@@ -15,13 +15,13 @@ RUN apt-get update \
         mopidy \
         mopidy-spotify
 RUN python3 -m pip install \
-        Mopidy-Iris==3.57.2 \
+        Mopidy-Iris==3.60.0 \
         Mopidy-Local \
         Mopidy-MPD \
         Mopidy-SomaFM \
         Mopidy-SoundCloud \
         Mopidy-TuneIn \
-        Mopidy-YouTube==3.2
+        Mopidy-YouTube==3.4
 
 # Clean-up
 RUN apt-get purge --auto-remove -y \
